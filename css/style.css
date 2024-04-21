@@ -1,0 +1,51 @@
+/*==============================================================
+  # Variables.
+==============================================================*/
+:root {
+  /* Colors. */
+  --white:                          #FFFFFF;
+  --black:                          #000000;
+
+  --primary-color:                  ;
+  --secondary-color:                ;
+  --tertiary-color:                 ;
+
+  /* Font family. */
+  --ff-body:                        'Poppins', sans-serif;
+
+  /* Font weights. */
+  --fw-thin:                        100;
+  --fw-extra-light:                 200;
+  --fw-light:                       300;
+  --fw-normal:                      400;
+  --fw-medium:                      500;
+  --fw-semibold:                    600;
+  --fw-bold:                        700;
+  --fw-extra-bold:                  800;
+  --fw-heavy-black:                 900;
+}
+
+/*==============================================================
+  # General.
+==============================================================*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: var(--ff-body);
+  font-weight: var(--fw-normal);
+  font-size: 14px;
+  background-color: var(--white);
+}
+
+/* --- Links. --- */
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
