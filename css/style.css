@@ -5,11 +5,13 @@
   /* Colors. */
   --white:                          #FFFFFF;
   --black:                          #000000;
+  --green:                          #008000;
+  --nyanza:	                        #ECFFDC;
   --bright-navy-blue:               #1A76D1;
 
-  --primary-color:                  ;
-  --secondary-color:                ;
-  --tertiary-color:                 ;
+  --primary-color:                  #1c1d21;
+  --secondary-color:                #0e373d;
+  --tertiary-color:                 #099aad;
 
   /* Font family. */
   --ff-body:                        'Poppins', sans-serif;
@@ -55,10 +57,13 @@ a:hover {
 
 ul {
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 img {
   max-width: 100%;
+  height: auto;
 }
 
 /*==============================================================
@@ -194,4 +199,107 @@ img {
 .preloader.preloader-deactivate .loader {
   opacity: 0;
   visibility: hidden;
+}
+
+/*==============================================================
+  # Header.
+==============================================================*/
+.header {
+  background-color: var(--primary-color);
+  position: relative;
+}
+
+.header .top-bar {
+  padding: 10px 0;
+}
+
+/* --- Top Contact --- */
+.top-contact {
+  float: left;
+}
+
+.top-contact li {
+  display: inline-block;
+  margin-right: 25px;
+  color: var(--white);
+  cursor: pointer;
+}
+
+.top-contact li:last-child {
+  margin-right: 0;
+}
+
+.top-contact li a {
+  color: var(--white);
+}
+
+.top-contact li a:hover,
+.top-contact li:hover {
+  color: var(--nyanza);
+}
+
+.top-contact li i {
+  color: var(--tertiary-color);
+  margin-right: 8px;
+  transition: transform 0.3s ease-out;
+}
+
+.top-contact li:hover i {
+  color: var(--green);
+  animation: bounce 0.8s;
+}
+
+/* --- Top Social --- */
+.top-social {
+  display: inline-block;
+}
+
+.top-social li {
+  display: inline;
+  margin-right: 10px;
+}
+
+.top-social li:last-child {
+  margin-right: 0;
+}
+
+.top-social li a i {
+  transition: transform 0.3s ease-out;
+}
+
+.top-social li a:hover i {
+  animation: bounce 0.8s;
+}
+
+.top-social a {
+  color: var(--tertiary-color);
+}
+
+.top-social a:hover {
+  color: var(--nyanza);
+}
+
+/* --- Top Logination --- */
+.top-auth {
+  float: right;
+  width: 5%;
+  filter: brightness(0) invert(1);
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  75% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
