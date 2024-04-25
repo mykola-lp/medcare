@@ -7,11 +7,15 @@
   --black:                          #000000;
   --green:                          #008000;
   --nyanza:	                        #ECFFDC;
+  --dark-gray:                      #666666;
   --bright-navy-blue:               #1A76D1;
 
   --primary-color:                  #1c1d21;
   --secondary-color:                #0e373d;
   --tertiary-color:                 #099aad;
+
+  /* Box's shadow. */
+  --box-shadow-gray:                #3333334d;
 
   /* Font family. */
   --ff-body:                        'Poppins', sans-serif;
@@ -75,7 +79,7 @@ img {
   height: 100%;
   text-align: center;
   z-index: 999;
-  transition: .9s;
+  transition: 0.9s;
 }
 
 .preloader .loader {
@@ -187,30 +191,30 @@ img {
   right: 0;
 }
 
-.preloader.preloader-deactivate {
+.preloader.preloader-inactive {
   visibility: hidden;
 }
 
-.preloader.preloader-deactivate::after,
-.preloader.preloader-deactivate::before {
+.preloader.preloader-inactive::after,
+.preloader.preloader-inactive::before {
   width: 0;
 }
 
-.preloader.preloader-deactivate .loader {
+.preloader.preloader-inactive .loader {
   opacity: 0;
   visibility: hidden;
 }
 
 /*==============================================================
-  # Header.
+  # Header (Top-bar).
 ==============================================================*/
 .header {
-  background-color: var(--primary-color);
   position: relative;
 }
 
 .header .top-bar {
   padding: 10px 0;
+  background-color: var(--primary-color);
 }
 
 /* --- Top Contact --- */
@@ -303,3 +307,176 @@ img {
     transform: translateY(0);
   }
 }
+
+/*==============================================================
+  # Header (Inner-header).
+==============================================================*/
+.inner .brand-name .logo,
+.inner .brand-name .heading {
+  display: inline;
+}
+
+.inner .brand-name {
+  margin-left: 10px;
+  margin-top: 13px;
+}
+
+.inner .brand-name img {
+  padding: 5px 0;
+  float: left;
+  width: 12%;
+}
+
+.brand-name .heading {
+  font-size: 30px;
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+.brand-name .heading .suffix {
+  text-transform: uppercase;
+  color: var(--tertiary-color);
+}
+
+.brand-name .heading .prefix {
+  color: var(--primary-color);
+}
+
+.inner .main-menu {
+  float: right;
+  margin-top: 14px;
+  margin-right: 15px;
+}
+
+.inner .main-menu li {
+  display: inline;
+  position: relative;
+  margin-right: 10px;
+}
+
+.inner .main-menu li:last-child {
+  margin: 0;
+}
+
+.inner .main-menu li a {
+  color: var(--primary-color);
+  font-size: 14px;
+  font-weight: var(--fw-medium);
+  text-transform: capitalize;
+  padding: 15px 7px;
+  position: relative;
+  display: inline-block;
+}
+
+.inner .main-menu li.active a:before {
+  opacity: 1;
+  visibility: visible;
+  width: 100%;
+}
+
+.inner .main-menu li.active a {
+  color: var(--tertiary-color);
+}
+
+.inner .main-menu li:hover a:before {
+  opacity: 1;
+  width: 100%;
+  visibility: visible;
+}
+
+.inner .main-menu li:hover a {
+  color: var(--tertiary-color);
+}
+
+.inner .main-menu li a i {
+  display: inline-block;
+  margin-left: 5px;
+  font-size: 13px;
+}
+
+/*!* --- Dropdown Menu --- *!*/
+.inner nav li .dropdown {
+  background: var(--white);
+  width: 220px;
+  position: absolute;
+  top: 100%;
+  z-index: 999;
+  box-shadow: 0 3px 5px var(--box-shadow-gray);
+  transform-origin: 0 0 0;
+  transform: scaleY(0.2);
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  opacity: 0;
+  visibility: hidden;
+  border-left: 3px solid var(--bright-navy-blue);
+}
+
+.inner nav li:hover .dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0px);
+}
+
+.inner nav li .dropdown li {
+  float: none;
+  margin: 0;
+  border-bottom: 1px dashed #eee;
+}
+
+.inner nav li .dropdown li:last-child {
+  border: none;
+}
+
+.inner nav li .dropdown li a {
+  padding: 12px 15px;
+  color: var(--dark-gray);
+  display: block;
+  font-weight: var(--fw-normal);
+  text-transform: capitalize;
+  background: transparent;
+  transition:all 0.2s ease;
+}
+
+.inner nav li .dropdown li a:before {
+  display: none;
+}
+
+.inner nav li .dropdown li:last-child a {
+  border-bottom: 0;
+}
+
+.inner nav li .dropdown li:hover a {
+  color: var(--bright-navy-blue);
+}
+
+.inner nav li .dropdown li a:hover {
+  border-color: transparent;
+}
+
+/* --- Box with 9-th boxes. --- */
+.box {
+  position: relative;
+  background-color: var(--tertiary-color);
+  width: 80px;
+  padding-bottom: 80px;
+  float: right;
+}
+
+.inner-box {
+  position: absolute;
+  background-color: white;
+  border-radius: 2px;
+  width: 12%;
+  height: 12%;
+}
+
+.inner-box:nth-child(1) { top: 25%; left: 25%; }
+.inner-box:nth-child(2) { top: 25%; left: 45%; }
+.inner-box:nth-child(3) { top: 25%; left: 65%; }
+.inner-box:nth-child(4) { top: 42%; left: 25%; }
+.inner-box:nth-child(5) { top: 42%; left: 45%; }
+.inner-box:nth-child(6) { top: 42%; left: 65%; }
+.inner-box:nth-child(7) { top: 60%; left: 25%; }
+.inner-box:nth-child(8) { top: 60%; left: 45%; }
+.inner-box:nth-child(9) { top: 60%; left: 65%; }
