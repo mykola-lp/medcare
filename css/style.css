@@ -8,6 +8,7 @@
   --green:                          #008000;
   --nyanza:	                        #ECFFDC;
   --dark-gray:                      #666666;
+  --light-gray:                     #d3d3d3;
   --bright-navy-blue:               #1A76D1;
 
   --primary-color:                  #1c1d21;
@@ -208,20 +209,12 @@ img {
 /*==============================================================
   # Header (Top-bar).
 ==============================================================*/
-.header {
-  position: relative;
-}
-
 .header .top-bar {
   padding: 10px 0;
   background-color: var(--primary-color);
 }
 
 /* --- Top Contact --- */
-.top-contact {
-  float: left;
-}
-
 .top-contact li {
   display: inline-block;
   margin-right: 25px;
@@ -239,7 +232,7 @@ img {
 
 .top-contact li a:hover,
 .top-contact li:hover {
-  color: var(--nyanza);
+  color: var(--light-gray);
 }
 
 .top-contact li i {
@@ -252,10 +245,18 @@ img {
   color: var(--green);
   animation: bounce 0.8s;
 }
-
 /* --- Top Social --- */
+.top-bar .wrapper {
+  float: right;
+}
+
+.top-social,
+.top-auth {
+  display: inline;
+}
+
 .top-social {
-  display: inline-block;
+  margin-right: 35px;
 }
 
 .top-social li {
@@ -285,8 +286,6 @@ img {
 
 /* --- Top Logination --- */
 .top-auth {
-  float: right;
-  width: 5%;
   filter: brightness(0) invert(1);
 }
 
